@@ -12,11 +12,11 @@ def macc_change(mac, interface):
     if macc_verif(mac, interface):
         try:
             #-----TRAZA-----#
-            print("TEST PASED")
+            #print("TEST PASED")
             #-----TRAZA-----#
-            #subprocess.run(["ifconfig", interface, "down"])
-            #subprocess.run(["ifconfig", interface, "hw", "ether", mac])
-            #subprocess.run(["ifconfig", interface, "up"])
+            subprocess.run(["ifconfig", interface, "down"])
+            subprocess.run(["ifconfig", interface, "hw", "ether", mac])
+            subprocess.run(["ifconfig", interface, "up"])
         except Exception as e:
             make_logs.make_logos(e)
             return f"OCURRRIO UN ERROR REVISAR EL ARCHIVO 'LOGS.TXT'"
